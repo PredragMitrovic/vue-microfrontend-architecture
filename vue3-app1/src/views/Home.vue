@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>APP 1</h1>
-  </div>
+  <p v-if="error">{{error}} - greska</p> 
+  <ul v-if="users">
+      <short-user-data v-for="user in users" :key="user.id" :user="user" />
+  </ul>
+  
+  <div v-else>Loading...</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent, onMounted, ref } from 'vue';
+import getUsers from '@/composables/getUsers';
+import shortUserData from '@/components/shortInfoOfuser.vue'
 
 export default defineComponent({
-  name: 'Home',
+  name: 'App',
   components: {
-    HelloWorld,
+    shortUserData,
   },
+  setup() {
+    const {users, error, load} = getUsers()
+    load()
+    return {error, users}
+
+  }
 });
 </script>
+
+<style scoped>
+li {
+  margin: 20px;
+  padding: 20px;
+  background-color: lightgrey;
+  color: blue;
+  list-style-type: none;
+}
+</style>

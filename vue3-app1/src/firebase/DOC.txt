@@ -1,0 +1,12 @@
+https://console.firebase.google.com/u/0/project/user-blog-vue3-ts/firestore/data/~2F
+
+1. instalira se firebase paket lokalno pomocu NPN konzole
+
+    npm install firebase
+
+2. iskopira se konfiguracioni objekat sa strane firebase sajta, tj projekta na kome se radi
+
+    ide se na project overwiev i klikne se na tag ikonicu (hoverom na njoj pise "web")
+
+    tu se registruje aplikacija, zatim se ide continue to console - dugme, zatim se klikne na ikonicu mreze kvadratica, gde pise koliko smo aplikacija dodali,
+    pa ta tockic od settingsa, skroluje se skroz dole, izabere se tab config i iskopira se objekat
