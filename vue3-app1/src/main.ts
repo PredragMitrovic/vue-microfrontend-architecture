@@ -1,8 +1,10 @@
 import { h, createApp } from 'vue';
 import singleSpaVue from 'single-spa-vue';
-
+import { eventBus } from '@/eventbus/event-bus';
 import App from './App.vue';
 import router from './router';
+const app = createApp(App);
+app.config.globalProperties.$eventBus = eventBus; 
 
 const vueLifecycles = singleSpaVue({
   createApp,
@@ -22,6 +24,9 @@ const vueLifecycles = singleSpaVue({
   },
   handleInstance(app) {
     app.use(router);
+    app.config.performance = true;
+    app.provide('eventBus', eventBus);
+    app.config.globalProperties.$eventBus = eventBus; 
   },
 });
 

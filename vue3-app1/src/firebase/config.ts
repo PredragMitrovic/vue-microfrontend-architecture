@@ -7,6 +7,8 @@ const firebaseConfig = {
   projectId: "user-blog-vue3-ts",
   storageBucket: "user-blog-vue3-ts.appspot.com",
   messagingSenderId: "955285740104",
+  experimentalForceLongPolling: true, // this line
+  useFetchStreams: false, // and this line
   appId: "1:955285740104:web:30bbcbbfc672b219c5967d"
 };
 
@@ -18,3 +20,4 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 
 export { db }
+

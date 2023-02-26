@@ -67,3 +67,5 @@ Using the single-spa architecture, we connected 3 VUE applications. Two based on
   Chashing issue --> Instal Chrome extension "Clear Cache"
 
 -Router issue - still working
+
+- add simple user info from firebase DB so we can work with data beetwin apps
